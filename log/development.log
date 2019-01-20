@@ -1,0 +1,579 @@
+  [1m[35m (653.5ms)[0m  [1m[35mCREATE DATABASE "tshirtbuilder_api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (477.9ms)[0m  [1m[35mCREATE DATABASE "tshirtbuilder_api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (54.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (19.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4056381190830887625)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20190118184907)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (22.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "company" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190118184907_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190118184907"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDesigns (20190118184921)
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (36.6ms)[0m  [1m[35mCREATE TABLE "designs" ("id" bigserial primary key, "shirtType" character varying, "shirtColor" character varying, "pocketColor" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_7c71225162"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190118184921_create_designs.rb:3
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_designs_on_user_id" ON "designs"  ("user_id")[0m
+  ↳ db/migrate/20190118184921_create_designs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190118184921"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (2.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-18 18:54:17.928468"], ["updated_at", "2019-01-18 18:54:17.928468"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4056381190830887625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (24.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "company", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Connor"], ["last_name", "Callahan"], ["company", "beef inc."], ["created_at", "2019-01-18 19:56:50.669098"], ["updated_at", "2019-01-18 19:56:50.669098"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mDesign Load (29.8ms)[0m  [1m[34mSELECT  "designs".* FROM "designs" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDesign Create (21.5ms)[0m  [1m[32mINSERT INTO "designs" ("shirtType", "shirtColor", "pocketColor", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["shirtType", "Base"], ["shirtColor", "red"], ["pocketColor", "blue"], ["user_id", 1], ["created_at", "2019-01-18 20:06:56.537671"], ["updated_at", "2019-01-18 20:06:56.537671"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT  "designs".* FROM "designs" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2019-01-18 15:10:48 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/connorcallahan/.rvm/gems/ruby-2.3.3/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/connorcallahan/.rvm/gems/ruby-2.3.3/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (6.6ms)
+Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2019-01-18 15:10:48 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/designs" for 127.0.0.1 at 2019-01-18 15:10:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/designs"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/designs" for 127.0.0.1 at 2019-01-18 15:11:15 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/designs"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:11:30 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for Api::V1::DesignsController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:13:25 -0500
+Processing by Api::V1::DesignsController#index as HTML
+  [1m[36mDesign Load (0.6ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.71ms)
+Completed 200 OK in 48ms (Views: 34.7ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:17:00 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.6ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.36ms)
+Completed 200 OK in 57ms (Views: 47.0ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:19:31 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (8.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (3.45ms)
+Completed 200 OK in 139ms (Views: 125.2ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:19:51 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (1.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.43ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:20:59 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (17.7ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (1.02ms)
+Completed 200 OK in 31ms (Views: 12.4ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:21:56 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (67.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.57ms)
+Completed 200 OK in 74ms (Views: 6.0ms | ActiveRecord: 67.4ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:22:14 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (76.2ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.39ms)
+Completed 200 OK in 82ms (Views: 5.5ms | ActiveRecord: 76.2ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:22:35 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (2.8ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.4ms)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:22:52 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (9.9ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (2.95ms)
+Completed 200 OK in 25ms (Views: 15.0ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:24:13 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.5ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.49ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:25:29 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (4.2ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.37ms)
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:25:52 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.48ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:26:25 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (1.74ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:27:01 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (19.7ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.35ms)
+Completed 200 OK in 25ms (Views: 4.5ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:30:04 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (1.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (4.71ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:30:19 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (3.2ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (2.22ms)
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:31:10 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.6ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.4ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:31:25 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.5ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (1.95ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:31:32 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (8.9ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (1.23ms)
+Completed 200 OK in 15ms (Views: 5.1ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:32:03 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (4.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.4ms)
+Completed 200 OK in 9ms (Views: 4.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:32:28 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (7.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (1.57ms)
+Completed 200 OK in 12ms (Views: 4.4ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:32:47 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (8.9ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.45ms)
+Completed 200 OK in 13ms (Views: 3.6ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:34:58 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (56.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.46ms)
+Completed 200 OK in 62ms (Views: 3.9ms | ActiveRecord: 56.3ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 15:35:05 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (13.7ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.44ms)
+Completed 200 OK in 21ms (Views: 7.0ms | ActiveRecord: 13.7ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (19.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDesign Create (18.0ms)[0m  [1m[32mINSERT INTO "designs" ("shirtType", "shirtColor", "pocketColor", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["shirtType", "Base"], ["shirtColor", "orange"], ["pocketColor", "green"], ["user_id", 1], ["created_at", "2019-01-19 00:33:38.790822"], ["updated_at", "2019-01-19 00:33:38.790822"]]
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDesign Create (0.5ms)[0m  [1m[32mINSERT INTO "designs" ("shirtType", "shirtColor", "pocketColor", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["shirtType", "Base"], ["shirtColor", "cyan"], ["pocketColor", "red"], ["user_id", 1], ["created_at", "2019-01-19 00:34:14.109112"], ["updated_at", "2019-01-19 00:34:14.109112"]]
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 19:34:27 -0500
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/connorcallahan/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.6ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.86ms)
+Completed 200 OK in 44ms (Views: 33.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 19:34:50 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.99ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 19:35:26 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (2.2ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (1.14ms)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 19:35:46 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.65ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 19:36:06 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.5ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (1.02ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 19:36:32 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.68ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 19:55:12 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (4.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.82ms)
+Completed 200 OK in 15ms (Views: 4.1ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 20:08:26 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (2.2ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (4.03ms)
+Completed 200 OK in 76ms (Views: 30.9ms | ActiveRecord: 37.9ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 21:12:04 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (33.2ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (2.38ms)
+Completed 200 OK in 83ms (Views: 16.0ms | ActiveRecord: 60.6ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 21:12:58 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (2.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (5.49ms)
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 21:13:30 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.9ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (3.33ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 21:13:46 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (11.8ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (1.76ms)
+Completed 200 OK in 18ms (Views: 6.0ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 21:17:24 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (16.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (7.45ms)
+Completed 200 OK in 51ms (Views: 31.4ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 21:28:47 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (2.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (9.94ms)
+Completed 200 OK in 50ms (Views: 39.1ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 21:30:53 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (116.2ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (3.0ms)
+Completed 200 OK in 135ms (Views: 17.9ms | ActiveRecord: 116.2ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 21:37:20 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (2.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (5.36ms)
+Completed 200 OK in 43ms (Views: 24.8ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 21:37:33 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (14.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (3.59ms)
+Completed 200 OK in 24ms (Views: 6.7ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-01-18 21:38:20 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "Base", shirtColor: "red", pocketColor: "blue", user_id: 1, created_at: "2019-01-18 20:06:56", updated_at: "2019-01-18 20:06:56">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (2.39ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+
+
