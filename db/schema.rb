@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_01_18_184921) do
     t.string "shirtType"
     t.string "shirtColor"
     t.string "pocketColor"
-    t.string "ringerColor"
+    t.string "ringer"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

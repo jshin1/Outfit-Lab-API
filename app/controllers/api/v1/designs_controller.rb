@@ -28,13 +28,13 @@ class Api::V1::DesignsController < ApplicationController
   end
 
   def destroy
-    @design.destroy 
+    @design.destroy
   end
 
   private
 
   def design_params
-    params.permit(:shirtType, :shirtColor, :pocketColor, :ringerColor, :user_id)
+    params.permit(:shirtType, :shirtColor, :pocketColor, :ringer, :user_id)
   end
 
   def find_design

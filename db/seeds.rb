@@ -8,3 +8,5 @@
 
 
 User.create(first_name:"Connor", last_name:"Callahan", company:"Flatiron")
+
+Design.create(shirtType: 'transparent', shirtColor: 'transparent', pocketColor: 'transparent', ringer: 'transparent', user_id: 1)

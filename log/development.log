@@ -5282,3 +5282,922 @@ Unpermitted parameter: :design
 Completed 202 Accepted in 69ms (Views: 2.4ms | ActiveRecord: 37.9ms)
 
 
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:08:22 -0500
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (4.9ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 200 OK in 35ms (Views: 16.3ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:08:28 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"baseball", "shirtColor"=>"transparent", "pocketColor"=>"#f8bbd0", "ringerColor"=>"transparent", "user_id"=>1, "design"=>{"shirtType"=>"baseball", "shirtColor"=>"transparent", "pocketColor"=>"#f8bbd0", "user_id"=>1}}
+Unpermitted parameter: :design
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 6.2ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'ringerColor' for Design.):
+  
+app/controllers/api/v1/designs_controller.rb:14:in `create'
+Started GET "/api/v1/clothes" for 127.0.0.1 at 2019-02-19 12:08:38 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/clothes"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:08:40 -0500
+Processing by Api::V1::DesignsController#index as HTML
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2019-02-19 12:08:45 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+No serializer found for resource: #<User id: 1, first_name: "Ji", last_name: "Shin", company: "Flatiron", created_at: "2019-01-22 20:30:30", updated_at: "2019-01-22 20:30:30">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.56ms)
+Completed 200 OK in 28ms (Views: 16.0ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:10:11 -0500
+Processing by Api::V1::DesignsController#index as HTML
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:10:47 -0500
+Processing by Api::V1::DesignsController#index as HTML
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/clothes" for 127.0.0.1 at 2019-02-19 12:23:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/clothes"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:24:19 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (7.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+Completed 200 OK in 16ms (Views: 1.5ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:26:55 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:27:00 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"hoodie", "shirtColor"=>"#ba68c8", "pocketColor"=>"transparent", "ringerColor"=>"transparent", "user_id"=>1, "design"=>{"shirtType"=>"hoodie", "shirtColor"=>"#ba68c8", "pocketColor"=>"transparent", "user_id"=>1}}
+Unpermitted parameter: :design
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'ringerColor' for Design.):
+  
+app/controllers/api/v1/designs_controller.rb:14:in `create'
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:30:43 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+Completed 200 OK in 9ms (Views: 1.5ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:30:46 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"tshirt", "shirtColor"=>"#ba68c8", "pocketColor"=>"transparent", "ringerColor"=>"transparent", "user_id"=>1, "design"=>{"shirtType"=>"tshirt", "shirtColor"=>"#ba68c8", "pocketColor"=>"transparent", "user_id"=>1}}
+Unpermitted parameter: :design
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:34:08 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (1.9ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 38ms (Views: 21.7ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:34:15 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"tshirt", "shirtColor"=>"#0097a7", "pocketColor"=>"transparent", "ringerColor"=>"#9c27b0", "user_id"=>1, "design"=>{"shirtType"=>"tshirt", "shirtColor"=>"#0097a7", "pocketColor"=>"transparent", "user_id"=>1}}
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:39:02 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (1.5ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 200 OK in 24ms (Views: 11.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:39:36 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"tshirt", "shirtColor"=>"#e1bee7", "pocketColor"=>"#f44336", "ringerColor"=>"transparent", "user_id"=>1, "design"=>{"shirtType"=>"tshirt", "shirtColor"=>"#e1bee7", "pocketColor"=>"#f44336", "user_id"=>1}}
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:40:07 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.7ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 20ms (Views: 10.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:40:07 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:40:12 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:40:21 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"tshirt", "shirtColor"=>"#d1c4e9", "pocketColor"=>"#c2185b", "ringerColor"=>"transparent", "user_id"=>1, "design"=>{"shirtType"=>"tshirt", "shirtColor"=>"#d1c4e9", "pocketColor"=>"#c2185b", "user_id"=>1}}
+Unpermitted parameter: :design
+Completed 500 Internal Server Error in 43097ms (ActiveRecord: 8.5ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'ringerColor' for Design.):
+  
+app/controllers/api/v1/designs_controller.rb:15:in `create'
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:42:05 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:42:13 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"tshirt", "shirtColor"=>"#d1c4e9", "pocketColor"=>"#0288d1", "ringerColor"=>"transparent", "user_id"=>1, "design"=>{"shirtType"=>"tshirt", "shirtColor"=>"#d1c4e9", "pocketColor"=>"#0288d1", "user_id"=>1}}
+Unpermitted parameter: :design
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:42:39 -0500
+Completed 500 Internal Server Error in 26394ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'ringerColor' for Design.):
+  
+app/controllers/api/v1/designs_controller.rb:15:in `create'
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.7ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:42:39 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:42:46 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:44:06 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"tshirt", "shirtColor"=>"#f06292", "pocketColor"=>"transparent", "ringerColor"=>"transparent", "user_id"=>1, "design"=>{"shirtType"=>"tshirt", "shirtColor"=>"#f06292", "pocketColor"=>"transparent", "user_id"=>1}}
+Unpermitted parameter: :design
+Unpermitted parameter: :design
+Unpermitted parameter: :design
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (9.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDesign Create (12.6ms)[0m  [1m[32mINSERT INTO "designs" ("shirtType", "shirtColor", "pocketColor", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["shirtType", "transparent"], ["shirtColor", "transparent"], ["pocketColor", "transparent"], ["user_id", 1], ["created_at", "2019-02-19 17:50:45.899106"], ["updated_at", "2019-02-19 17:50:45.899106"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:51:03 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"tshirt", "shirtColor"=>"#f8bbd0", "pocketColor"=>"#512da8", "ringerColor"=>"#512da8", "user_id"=>1, "design"=>{"shirtType"=>"tshirt", "shirtColor"=>"#f8bbd0", "pocketColor"=>"#512da8", "user_id"=>1}}
+  [1m[36mDesign Load (2.5ms)[0m  [1m[34mSELECT  "designs".* FROM "designs" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[36mDesign Load (1.8ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ (byebug):1
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:52:27 -0500
+  [1m[35m (34.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1
+  [1m[36mDesign Destroy (0.5ms)[0m  [1m[31mDELETE FROM "designs" WHERE "designs"."id" = $1[0m  [["id", 2]]
+  ↳ (byebug):1
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4056381190830887625)[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateDesigns (20190118184921)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (22.5ms)[0m  [1m[35mDROP TABLE "designs"[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (5.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190118184921"]]
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4056381190830887625)[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4056381190830887625)[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateDesigns (20190118184921)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (35.6ms)[0m  [1m[35mCREATE TABLE "designs" ("id" bigserial primary key, "shirtType" character varying, "shirtColor" character varying, "pocketColor" character varying, "ringer" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_7c71225162"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190118184921_create_designs.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_designs_on_user_id" ON "designs"  ("user_id")[0m
+  ↳ db/migrate/20190118184921_create_designs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190118184921"]]
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (9.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4056381190830887625)[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDesign Create (2.0ms)[0m  [1m[32mINSERT INTO "designs" ("shirtType", "shirtColor", "pocketColor", "ringer", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["shirtType", "transparent"], ["shirtColor", "transparent"], ["pocketColor", "transparent"], ["ringer", "transparent"], ["user_id", 1], ["created_at", "2019-02-19 17:54:13.653911"], ["updated_at", "2019-02-19 17:54:13.653911"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/clothes" for 127.0.0.1 at 2019-02-19 12:55:44 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/clothes"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:55:46 -0500
+Processing by Api::V1::DesignsController#index as HTML
+  [1m[36mDesign Load (0.8ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.41ms)
+Completed 200 OK in 36ms (Views: 24.2ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:55:51 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.17ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:56:07 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"tshirt", "shirtColor"=>"#f8bbd0", "pocketColor"=>"#0288d1", "ringer"=>"#03a9f4", "user_id"=>1, "design"=>{"shirtType"=>"tshirt", "shirtColor"=>"#f8bbd0", "pocketColor"=>"#0288d1", "ringer"=>"#03a9f4", "user_id"=>1}}
+Unpermitted parameters: :ringer, :design
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:56:20 -0500
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+Processing by Api::V1::DesignsController#index as HTML
+  [1m[36mDesign Create (1.8ms)[0m  [1m[32mINSERT INTO "designs" ("shirtType", "shirtColor", "pocketColor", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["shirtType", "tshirt"], ["shirtColor", "#f8bbd0"], ["pocketColor", "#0288d1"], ["user_id", 1], ["created_at", "2019-02-19 17:56:20.087714"], ["updated_at", "2019-02-19 17:56:20.087714"]]
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[36mDesign Load (0.8ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:16
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Design (0.41ms)
+Completed 202 Accepted in 12407ms (Views: 2.6ms | ActiveRecord: 9.0ms)
+
+
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.42ms)
+Completed 200 OK in 9ms (Views: 3.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:56:23 -0500
+Processing by Api::V1::DesignsController#index as HTML
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.46ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:56:49 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.7ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.57ms)
+Completed 200 OK in 36ms (Views: 25.5ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:57:15 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"tshirt", "shirtColor"=>"#ffa000", "pocketColor"=>"#388e3c", "ringer"=>"#4caf50", "user_id"=>1, "design"=>{"shirtType"=>"tshirt", "shirtColor"=>"#ffa000", "pocketColor"=>"#388e3c", "ringer"=>"#4caf50", "user_id"=>1}}
+Unpermitted parameter: :design
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[36mDesign Create (0.9ms)[0m  [1m[32mINSERT INTO "designs" ("shirtType", "shirtColor", "pocketColor", "ringer", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["shirtType", "tshirt"], ["shirtColor", "#ffa000"], ["pocketColor", "#388e3c"], ["ringer", "#4caf50"], ["user_id", 1], ["created_at", "2019-02-19 17:57:22.274319"], ["updated_at", "2019-02-19 17:57:22.274319"]]
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:16
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Design (0.4ms)
+Completed 202 Accepted in 6750ms (Views: 0.8ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 12:57:39 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"hoodie", "shirtColor"=>"#ffa000", "pocketColor"=>"#388e3c", "ringer"=>"#4caf50", "user_id"=>1, "design"=>{"shirtType"=>"hoodie", "shirtColor"=>"#ffa000", "pocketColor"=>"#388e3c", "ringer"=>"#4caf50", "user_id"=>1}}
+Unpermitted parameter: :design
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[36mDesign Create (0.5ms)[0m  [1m[32mINSERT INTO "designs" ("shirtType", "shirtColor", "pocketColor", "ringer", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["shirtType", "hoodie"], ["shirtColor", "#ffa000"], ["pocketColor", "#388e3c"], ["ringer", "#4caf50"], ["user_id", 1], ["created_at", "2019-02-19 17:57:51.553343"], ["updated_at", "2019-02-19 17:57:51.553343"]]
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:16
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Design (0.2ms)
+Completed 202 Accepted in 11823ms (Views: 0.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/v1/players" for 127.0.0.1 at 2019-02-19 13:00:59 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/players"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/players" for 127.0.0.1 at 2019-02-19 13:00:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/players"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/players" for 127.0.0.1 at 2019-02-19 13:33:53 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/players"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/players" for 127.0.0.1 at 2019-02-19 13:33:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/players"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/players" for 127.0.0.1 at 2019-02-19 13:35:44 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/players"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/players" for 127.0.0.1 at 2019-02-19 13:35:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/players"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/players" for 127.0.0.1 at 2019-02-19 13:38:54 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/players"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/players" for 127.0.0.1 at 2019-02-19 13:38:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/players"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:29:28 -0500
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ji/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (6.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.81ms)
+Completed 200 OK in 56ms (Views: 26.2ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:29:36 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.58ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/v1/designs/2" for 127.0.0.1 at 2019-02-19 15:30:26 -0500
+Processing by Api::V1::DesignsController#destroy as JSON
+  Parameters: {"id"=>"2", "design"=>{}}
+  [1m[36mDesign Load (0.7ms)[0m  [1m[34mSELECT  "designs".* FROM "designs" WHERE "designs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/designs_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:31
+  [1m[36mDesign Destroy (0.4ms)[0m  [1m[31mDELETE FROM "designs" WHERE "designs"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/designs_controller.rb:31
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:31
+Completed 204 No Content in 17ms (ActiveRecord: 2.1ms)
+
+
+Started DELETE "/api/v1/designs/4" for 127.0.0.1 at 2019-02-19 15:30:28 -0500
+Processing by Api::V1::DesignsController#destroy as JSON
+  Parameters: {"id"=>"4", "design"=>{}}
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT  "designs".* FROM "designs" WHERE "designs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/designs_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:31
+  [1m[36mDesign Destroy (0.3ms)[0m  [1m[31mDELETE FROM "designs" WHERE "designs"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/api/v1/designs_controller.rb:31
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:31
+Completed 204 No Content in 3ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:30:51 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.32ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:30:53 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.34ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:31:13 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"tshirt", "shirtColor"=>"#673ab7", "pocketColor"=>"#f06292", "ringer"=>"#f06292", "user_id"=>1, "design"=>{"shirtType"=>"tshirt", "shirtColor"=>"#673ab7", "pocketColor"=>"#f06292", "ringer"=>"#f06292", "user_id"=>1}}
+Unpermitted parameter: :design
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[36mDesign Create (6.6ms)[0m  [1m[32mINSERT INTO "designs" ("shirtType", "shirtColor", "pocketColor", "ringer", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["shirtType", "tshirt"], ["shirtColor", "#673ab7"], ["pocketColor", "#f06292"], ["ringer", "#f06292"], ["user_id", 1], ["created_at", "2019-02-19 20:31:13.964943"], ["updated_at", "2019-02-19 20:31:13.964943"]]
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Design (0.29ms)
+Completed 202 Accepted in 52ms (Views: 3.8ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:31:30 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.54ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:32:27 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.2ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.46ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:32:41 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"hoodie", "shirtColor"=>"#8bc34a", "pocketColor"=>"#ff9800", "ringer"=>"transparent", "user_id"=>1, "design"=>{"shirtType"=>"hoodie", "shirtColor"=>"#8bc34a", "pocketColor"=>"#ff9800", "ringer"=>"transparent", "user_id"=>1}}
+Unpermitted parameter: :design
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[36mDesign Create (0.4ms)[0m  [1m[32mINSERT INTO "designs" ("shirtType", "shirtColor", "pocketColor", "ringer", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["shirtType", "hoodie"], ["shirtColor", "#8bc34a"], ["pocketColor", "#ff9800"], ["ringer", "transparent"], ["user_id", 1], ["created_at", "2019-02-19 20:32:41.261391"], ["updated_at", "2019-02-19 20:32:41.261391"]]
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Design (0.2ms)
+Completed 202 Accepted in 6ms (Views: 0.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:33:42 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (1.07ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:36:27 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.86ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:37:31 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.6ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.78ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:38:11 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.75ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/v1/designs/6" for 127.0.0.1 at 2019-02-19 15:38:14 -0500
+Processing by Api::V1::DesignsController#destroy as JSON
+  Parameters: {"id"=>"6", "design"=>{}}
+  [1m[36mDesign Load (0.3ms)[0m  [1m[34mSELECT  "designs".* FROM "designs" WHERE "designs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/designs_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:31
+  [1m[36mDesign Destroy (0.3ms)[0m  [1m[31mDELETE FROM "designs" WHERE "designs"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/api/v1/designs_controller.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:31
+Completed 204 No Content in 2ms (ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:38:24 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"hoodie", "shirtColor"=>"#00bcd4", "pocketColor"=>"#e91e63", "ringer"=>"transparent", "user_id"=>1, "design"=>{"shirtType"=>"hoodie", "shirtColor"=>"#00bcd4", "pocketColor"=>"#e91e63", "ringer"=>"transparent", "user_id"=>1}}
+Unpermitted parameter: :design
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[36mDesign Create (0.5ms)[0m  [1m[32mINSERT INTO "designs" ("shirtType", "shirtColor", "pocketColor", "ringer", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["shirtType", "hoodie"], ["shirtColor", "#00bcd4"], ["pocketColor", "#e91e63"], ["ringer", "transparent"], ["user_id", 1], ["created_at", "2019-02-19 20:38:24.127688"], ["updated_at", "2019-02-19 20:38:24.127688"]]
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Design (0.26ms)
+Completed 202 Accepted in 7ms (Views: 0.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:40:40 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.86ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:41:14 -0500
+Processing by Api::V1::DesignsController#index as */*
+  [1m[36mDesign Load (0.5ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:6
+No serializer found for resource: #<Design id: 1, shirtType: "transparent", shirtColor: "transparent", pocketColor: "transparent", ringer: "transparent", user_id: 1, created_at: "2019-02-19 17:54:13", updated_at: "2019-02-19 17:54:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Design::ActiveRecord_Relation (0.88ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/v1/designs/7" for 127.0.0.1 at 2019-02-19 15:41:25 -0500
+Processing by Api::V1::DesignsController#destroy as JSON
+  Parameters: {"id"=>"7", "design"=>{}}
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT  "designs".* FROM "designs" WHERE "designs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/designs_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:31
+  [1m[36mDesign Destroy (0.3ms)[0m  [1m[31mDELETE FROM "designs" WHERE "designs"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/designs_controller.rb:31
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:31
+Completed 204 No Content in 3ms (ActiveRecord: 1.4ms)
+
+
+Started POST "/api/v1/designs" for 127.0.0.1 at 2019-02-19 15:41:27 -0500
+Processing by Api::V1::DesignsController#create as JSON
+  Parameters: {"shirtType"=>"hoodie", "shirtColor"=>"#00bcd4", "pocketColor"=>"#e91e63", "ringer"=>"transparent", "user_id"=>1, "design"=>{"shirtType"=>"hoodie", "shirtColor"=>"#00bcd4", "pocketColor"=>"#e91e63", "ringer"=>"transparent", "user_id"=>1}}
+Unpermitted parameter: :design
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[36mDesign Create (0.5ms)[0m  [1m[32mINSERT INTO "designs" ("shirtType", "shirtColor", "pocketColor", "ringer", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["shirtType", "hoodie"], ["shirtColor", "#00bcd4"], ["pocketColor", "#e91e63"], ["ringer", "transparent"], ["user_id", 1], ["created_at", "2019-02-19 20:41:27.578671"], ["updated_at", "2019-02-19 20:41:27.578671"]]
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/designs_controller.rb:15
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Design (0.3ms)
+Completed 202 Accepted in 7ms (Views: 0.9ms | ActiveRecord: 1.8ms)
+
+
