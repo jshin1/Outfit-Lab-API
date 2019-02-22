@@ -1,24 +1,5 @@
-# README
+# OUTFIT LAB (Backend) README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is another fashion application that allows the user to design various articles of clothing (e.g. t-shirts, baseball tees, hoodies) with colors, graphics, and features such as buttons, laces, and stitching.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The frontend repo, technologies used, and video demo can be found here: https://github.com/jshin1/Outfit-Lab
